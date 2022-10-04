@@ -1,6 +1,8 @@
-import React, { useState, useRef, useCallback, useEffect } from 'react';
+// import React, { Component } from 'react';
 
-const SimpleHabit = () => {
+import React, { useCallback, useEffect, useRef, useState } from "react";
+
+const SimpleHabit = props => {
   const [count, setCount] = useState(0);
   const spanRef = useRef();
 
@@ -9,15 +11,17 @@ const SimpleHabit = () => {
   });
 
   useEffect(() => {
-    console.log(`mounted & updated!: ${count}`);
-  }, []);
+    console.log(`mounted && updated!: ${count}`);
+  }, [count]);
+
   return (
     <li className="habit">
-      <span ref={spanRef} className="habit-name">
-        Reading
-      </span>
+      <span ref={spanRef} className="habit-name">Reading</span>
       <span className="habit-count">{count}</span>
-      <button className="habit-button habit-increase" onClick={handleIncrement}>
+      <button
+        className="habit-button habit-increase"
+        onClick={handleIncrement}
+      >
         <i className="fas fa-plus-square"></i>
       </button>
     </li>
@@ -25,3 +29,17 @@ const SimpleHabit = () => {
 };
 
 export default SimpleHabit;
+
+// class SimpleHabit extends Component {
+//   state = {
+//     count: 0,
+//   };
+
+//
+
+//   render() {
+
+//   }
+// }
+
+// export default SimpleHabit;
