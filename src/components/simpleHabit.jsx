@@ -11,9 +11,8 @@ const SimpleHabit = props => {
   });
 
   useEffect(() => {
-    console.log(`mounted && updated!: ${count}`);
+    console.log(`mounted & updated!: ${count}`);
   }, [count]);
-
   return (
     <li className="habit">
       <span ref={spanRef} className="habit-name">Reading</span>
